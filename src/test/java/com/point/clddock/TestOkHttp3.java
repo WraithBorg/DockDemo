@@ -15,7 +15,7 @@ public class TestOkHttp3 {
     private static final Logger logger = LoggerFactory.getLogger(TestOkHttp3.class);
 
     public static void main(String[] args) {
-        String url = "http://zxcs.test.fxscm.net:8040/cldpoint/zyuDock/plat/getOutStoreData.do";
+        String url = "地址";
         String jsonStr = "{\"name\":\"BigKang\"}";
         Map<String, String> headMap = new HashMap<>();
         headMap.put("uname", "sr");
@@ -53,7 +53,7 @@ public class TestOkHttp3 {
     }
 
     static void asynRequest() {
-        String url = "http://zxcs.test.fxscm.net:8040/cldpoint/zyuDock/plat/get.do";
+        String url = "地址";
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(url)

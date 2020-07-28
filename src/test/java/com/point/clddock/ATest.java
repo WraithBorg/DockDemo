@@ -37,13 +37,14 @@ public class ATest {
      */
     @Test
     public void testSprHttp() {
-        String url = "http://zxcs.test.fxscm.net:8040/cldpoint/zyuDock/plat/getOutStoreData.do";
+        String url = "地址";
         Map<String, Object> bodyMap = CustomUtil.ofMap("name", "Big");
         Map<String, String> headerMap = new HashMap<>();
         headerMap.put("uname", "sr");
         headerMap.put("passwd", "4862");
         sprHttpClient.syncPostJson4Cld(url, headerMap, bodyMap);
     }
+
     /**
      * 测试国际化
      */
@@ -52,11 +53,12 @@ public class ATest {
         String messageSource = SprBeanUtil.getMessageSource("result.success", null);
         System.out.println(messageSource);
     }
+
     /**
      * 测试对称加密
      */
     @Test
-    public void testAES (){
+    public void testAES() {
         String uKey = DockAES.getUKey();
         String message = JSONObject.toJSONString(CustomUtil.ofMap("id", "007", "name", "zx"));
         String encryptMsg = DockAES.encryptMsg(message, uKey);
@@ -64,11 +66,12 @@ public class ATest {
         System.out.println(encryptMsg);
         System.out.println(decrypt);
     }
+
     /**
      * 测试Dock对接第三方接口
      */
     @Test
-    public void testAuth(){
+    public void testAuth() {
 
         String uKey = DockAES.getUKey();
         String return_publicKeyEncrypt = null;
@@ -81,8 +84,7 @@ public class ATest {
         Map<String, String> userMap = CustomUtil.ofMap("userId", "a007", "userName", "admin", "userPwd", "0000");
         String userInfo = JSON.toJSONString(userMap);
         String return_encryptMsg = DockAES.encryptMsg(userInfo, uKey);
-//        String url = "http://zxcs.test.fxscm.net:8040/cldpoint/zyuDock/plat/getOutStoreData.do";
-        String url = "http://zxcs.test.fxscm.net:8040/cldpoint/zyuDock/plat/setDate2Dock.do";
+        String url = "地址";
         Map<String, String> headerMap = CustomUtil.ofMap(DockBrige.U_KEY, return_publicKeyEncrypt);
         Map<String, Object> bodyMap = CustomUtil.ofMap(DockBrige.U_DATA, return_encryptMsg);
         sprHttpClient.syncPostJson4Cld(url, headerMap, bodyMap);
